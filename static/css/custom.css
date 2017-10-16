@@ -1,0 +1,18 @@
+#page-wrapper > div > p > img {
+  width: 100% !important;
+  height: auto !important;
+}
+#page-wrapper > div > figure > img {
+  width: 100% !important;
+  height: auto !important;
+}
+
+div#wrapper div#page-wrapper div div.post div.thumbnail img {
+  background: white !important;
+}
+
+
+div#wrapper div#page-wrapper div div.post div.thumbnail {
+  margin: 0px;
+  padding: 0px;
+}

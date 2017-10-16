@@ -1,0 +1,59 @@
+{% extends 'mactip/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="infinite-container">
+        <div class="row infinite-item">
+            {% for post in posts %}
+                <a href="{% url 'post_detail' pk=post.pk %}">
+                    <div class="col-md-6 col-lg-3 col-xs-12 col-sm-6">
+                        <div class="post">
+                            <div class="thumbnail">
+                                <img class="img-responsive" alt="user" src="{{ post.images.url }}">
+                            </div>
+
+                            <div class="white-box">
+                                <div class="text-muted"><span class="m-r-10"><i
+                                        class="icon-calender"></i> {{ post.created_at }}</span>
+                                    <a
+                                            class="text-muted m-l-10" href="#"><i class="fa fa-heart-o"></i> 38</a></div>
+                                <h3 class="m-t-20 m-b-20">{{ post.title }}</h3>
+                                <p>{{ post.intro | truncatechars:100 }}</p>
+                                <a href="{% url 'post_detail' pk=post.pk %}"
+                                   class="btn btn-success btn-rounded waves-effect waves-light m-t-20">Read more</a>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="loading" style="display: none;">
+        <div class="preloader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+            </svg>
+        </div>
+    </div>
+
+    {% if posts.has_next %}
+        <a class="infinite-more-link" href="?page={{ posts.next_page_number }}"></a>
+    {% endif %}
+
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'js/infinite.min.js' %}"></script>
+    <script>
+        var infinite = new Waypoint.Infinite({
+            element: $('.infinite-container')[0],
+            onBeforePageLoad: function () {
+                $('.loading').show();
+            },
+            onAfterPageLoad: function ($items) {
+                $('.loading').hide();
+            }
+        });
+    </script>
+{% endblock %}
