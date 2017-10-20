@@ -1,4 +1,4 @@
 applications:
-- name: GetStartedPython
+- name: isharetip
   random-route: true
   memory: 512M
