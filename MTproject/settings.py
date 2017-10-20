@@ -25,7 +25,7 @@ SECRET_KEY = 'f417ixt4gagk+ppuqug-p*%#s-b)g#sn3x)a(#=xq4^imwu0(f'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'storages',
+
 ]
 
 MIDDLEWARE = [
@@ -145,3 +146,8 @@ CKEDITOR_CONFIGS = {
 DEFAULT_FILE_STORAGE = 'storages.backends.dropbox.DropBoxStorage'
 DROPBOX_OAUTH2_TOKEN = 'gI80eXO4ucUAAAAAAAADXUMbrld8uZvAxPlQzEVyJedbPflaUda9L-8Bub7DY1JW'
 DROPBOX_ROOT_PATH = 'mactips'
+
+# FLICKR_STORAGE_OPTIONS = {
+#     'api_key': os.environ.get('FLICKR_API_KEY', 'dcec0661d67f190220a34c585437694b'),
+#     'user_id': os.environ.get('FLICKR_USER_ID', '128922771@N02')
+# }
