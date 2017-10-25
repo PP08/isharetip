@@ -36,8 +36,6 @@ services:
     links:
       - web:web
     deploy:
-      placement:
-        constraints: [node.role == manager]
       restart_policy:
         condition: on-failure
     networks:
