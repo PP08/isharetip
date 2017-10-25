@@ -26,11 +26,6 @@ services:
       - webnet
   nginx:
     image: lancelot1008/mactip_nginx
-    deploy:
-      placement:
-        constraints: [node.role == manager]
-      restart_policy:
-        condition: on-failure
     build: ./nginx/
     ports:
       - "80:80"
@@ -40,6 +35,11 @@ services:
       - web
     links:
       - web:web
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+      restart_policy:
+        condition: on-failure
     networks:
       - webnet
 networks:
