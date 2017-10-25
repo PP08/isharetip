@@ -1,0 +1,44 @@
+version: '3'
+services:
+  db:
+    image: postgres
+    networks:
+      - webnet
+  web:
+    image: lancelot1008/mactip_web
+    build: .
+    deploy:
+      replicas: 5
+      resources:
+        limits:
+          cpus: "0.2"
+          memory: 100M
+      restart_policy:
+        condition: on-failure
+    expose:
+      - "8000"
+    command: uwsgi --http :8000 --module MTproject.wsgi
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+    networks:
+      - webnet
+  nginx:
+    image: lancelot1008/mactip_nginx
+    deploy:
+      restart_policy:
+        condition: on-failure
+    build: ./nginx/
+    ports:
+      - "80:80"
+    volumes:
+      - .:/app
+    depends_on:
+      - web
+    links:
+      - web:web
+    networks:
+      - webnet
+networks:
+  webnet:

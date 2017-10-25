@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'MacTip.apps.MactipConfig',
     'ckeditor',
     'ckeditor_uploader',
-    'storages',
+    # 'storages',
 
 ]
 
@@ -68,7 +68,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'django.template.context_processors.base_info',
+                # 'django.template.context_processors.base_info',
             ],
         },
     },
@@ -80,14 +80,31 @@ WSGI_APPLICATION = 'MTproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'mactip',
+#         'USER': 'phucphuong',
+#         'PASSWORD': '',
+#         'HOST': '127.0.0.1',
+#         'PORT': '5432',
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'HOST': 'db',
+        'PORT': 5432,
     }
 }
-
-
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
 
@@ -130,11 +147,12 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "MacTip/static"),
 ]
 
-STATIC_ROOT = "./static/"
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+
 CKEDITOR_UPLOAD_PATH = "uploads/"
 CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 MEDIA_URL = '/media/'
 
 CKEDITOR_CONFIGS = {
@@ -143,9 +161,9 @@ CKEDITOR_CONFIGS = {
     },
 }
 
-DEFAULT_FILE_STORAGE = 'storages.backends.dropbox.DropBoxStorage'
-DROPBOX_OAUTH2_TOKEN = 'gI80eXO4ucUAAAAAAAADXUMbrld8uZvAxPlQzEVyJedbPflaUda9L-8Bub7DY1JW'
-DROPBOX_ROOT_PATH = 'mactips'
+# DEFAULT_FILE_STORAGE = 'storages.backends.dropbox.DropBoxStorage'
+# DROPBOX_OAUTH2_TOKEN = 'gI80eXO4ucUAAAAAAAADXUMbrld8uZvAxPlQzEVyJedbPflaUda9L-8Bub7DY1JW'
+# DROPBOX_ROOT_PATH = 'mactips'
 
 # FLICKR_STORAGE_OPTIONS = {
 #     'api_key': os.environ.get('FLICKR_API_KEY', 'dcec0661d67f190220a34c585437694b'),
