@@ -5,7 +5,6 @@ services:
     networks:
       - webnet
   web:
-    image: lancelot1008/mactip_web
     build: .
     deploy:
       replicas: 5
@@ -30,27 +29,25 @@ services:
       - "8080:8080"
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock"
-#    deploy:
-#      placement:
-#        constraints: [node.role == manager]
+    deploy:
+      placement:
+        constraints: [node.role == manager]
     networks:
       - webnet
-#  nginx:
-#    image: lancelot1008/mactip_nginx
-#    build: ./nginx/
-#    ports:
-#      - "80:80"
-#    volumes:
-#      - .:/app
-#    command: cp
-#    depends_on:
-#      - web
-#    links:
-#      - web:web
-#    deploy:
-#      placement:
-#        constraints: [node.role == manager]
-#    networks:
-#      - webnet
+  nginx:
+    build: ./nginx/
+    ports:
+      - "80:80"
+    volumes:
+      - .:/app
+    depends_on:
+      - web
+    links:
+      - web:web
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+    networks:
+      - webnet
 networks:
   webnet:
