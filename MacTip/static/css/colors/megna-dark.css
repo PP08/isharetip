@@ -42,6 +42,7 @@ body {
   color: #686868;
 }
 .bg-title {
+  background: #f1f2f7;
   border-bottom: 1px solid rgba(120, 130, 140, 0.13);
 }
 /*Right panel*/

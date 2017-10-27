@@ -33,6 +33,10 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
+    # def save(self, force_insert=False, force_update=False, using=None,
+    #          update_fields=None):
+    #
+
     class Meta:
         db_table = "Post"
 

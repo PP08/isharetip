@@ -27,7 +27,8 @@ div.thumbnail {
 }
 
 div#wrapper div#page-wrapper div div.post:hover {
-    box-shadow: 0px 12px 25px #0d0e09;
+    /*box-shadow: 0px 12px 25px #0d0e09;*/
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 div#wrapper div#page-wrapper div div div.post div h3 {
@@ -56,4 +57,3 @@ html body.fix-header div#wrapper div#page-wrapper div.container-fluid div div.pa
 html body.fix-header div#wrapper div#page-wrapper div.container-fluid div div.panel.panel-default div.panel-wrapper.collapse.in div.panel-footer {
     background: white;
 }
-
