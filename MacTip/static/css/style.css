@@ -890,7 +890,7 @@ pre {
   color: #ffffff;
 }
 .top-left-part {
-  width: 220px;
+  width: 180px;
   float: left;
   border-right: 1px solid rgba(0, 0, 0, 0.08);
 }
@@ -16469,7 +16469,7 @@ ul.pro-amenities li span i {
     margin-right: 0px;
   }
   .top-left-part {
-    width: 60px;
+    width: 53px;
   }
   .navbar-top-links > li:last-child {
     margin-right: 0px;
