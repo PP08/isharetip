@@ -4,7 +4,7 @@
     <div class="infinite-container">
         <div class="row infinite-item">
             {% for post in posts %}
-                <a href="{% url 'post_detail' pk=post.pk %}">
+                <a href="{% url 'post_detail' slug=post.slug %}">
                     <div class="col-md-6 col-lg-3 col-xs-12 col-sm-6">
                         <div class="post">
                             <div class="thumbnail">
@@ -18,7 +18,7 @@
                                             class="text-muted m-l-10" href="#"><i class="fa fa-heart-o"></i> 38</a></div>
                                 <h3 class="m-t-20 m-b-20">{{ post.title }}</h3>
                                 <p>{{ post.intro | truncatechars:100 }}</p>
-                                <a href="{% url 'post_detail' pk=post.pk %}"
+                                <a href="{% url 'post_detail' slug=post.slug %}"
                                    class="btn btn-success btn-rounded waves-effect waves-light m-t-20">Read more</a>
                             </div>
                         </div>

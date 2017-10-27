@@ -15,8 +15,8 @@ def home(request):
 
     return render(request, 'mactip/index.html', {'posts': posts, 'node': 'Home page'})
 
-def post_detail(request, pk):
-    post = Post.objects.get(pk=pk)
+def post_detail(request, slug):
+    post = Post.objects.get(slug=slug)
     category = post.category
     node = 'Post / ' + str(category)
     # node = "POST"
