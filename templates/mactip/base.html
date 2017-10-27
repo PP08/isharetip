@@ -9,31 +9,31 @@
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,600,700&amp;subset=vietnamese"
           rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="16x16" href="{% static "/plugins/images/favicon.png" %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static "plugins/images/favicon.png" %}">
     <title>isharetip | because Sharing is Caring</title>
     <!-- Bootstrap Core CSS -->
     <link href="{% static "bootstrap/dist/css/bootstrap.min.css" %}" rel="stylesheet">
     <!-- Menu CSS -->
-    <link href="{% static "/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css" %}" rel="stylesheet">
+    <link href="{% static "plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css" %}" rel="stylesheet">
     {#    <!-- toast C{% static "" -->#}
     <!-- Popup CSS -->
-    <link href="{% static "/plugins/bower_components/Magnific-Popup-master/dist/magnific-popup.css" %}"
+    <link href="{% static "plugins/bower_components/Magnific-Popup-master/dist/magnific-popup.css" %}"
           rel="stylesheet">
-    <link href="{% static "/plugins/bower_components/toast-master/css/jquery.toast.css" %}" rel="stylesheet">
+    <link href="{% static "plugins/bower_components/toast-master/css/jquery.toast.css" %}" rel="stylesheet">
     {#    <!-- morris {% static "S -->#}
-    <link href="{% static "/plugins/bower_components/morrisjs/morris.css" %}" rel="stylesheet">
+    <link href="{% static "plugins/bower_components/morrisjs/morris.css" %}" rel="stylesheet">
     {#    <!-- chartis{% static "CSS -->#}
-    <link href="{% static "/plugins/bower_components/chartist-js/dist/chartist.min.css" %}" rel="stylesheet">
-    <link href="{% static "/plugins/bower_components/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css" %}"
+    <link href="{% static "plugins/bower_components/chartist-js/dist/chartist.min.css" %}" rel="stylesheet">
+    <link href="{% static "plugins/bower_components/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css" %}"
           rel="stylesheet">
     {#    <!-- Calenda{% static "CSS -->#}
-    <link href="{% static "/plugins/bower_components/calendar/dist/fullcalendar.css" %}" rel="stylesheet"/>
+    <link href="{% static "plugins/bower_components/calendar/dist/fullcalendar.css" %}" rel="stylesheet"/>
     <!-- animation CSS -->
-    <link href="{% static "/css/animate.css" %}" rel="stylesheet">
+    <link href="{% static "css/animate.css" %}" rel="stylesheet">
     {#    <!-- Custom {% static /CSS -->#}
-    <link href="{% static "/css/style.css" %}" rel="stylesheet">
+    <link href="{% static "css/style.css" %}" rel="stylesheet">
     {#    <!-- color C{% static /SS -->#}
-    <link href="{% static "/css/colors/blue-dark.css" %}" id="theme" rel="stylesheet">
+    <link href="{% static "css/colors/blue-dark.css" %}" id="theme" rel="stylesheet">
     {#    custom css#}
     <link rel="stylesheet" href="{% static "css/custom.css" %}">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -66,15 +66,16 @@
                 <!-- Logo -->
                 <a class="logo" href="{% url "index" %}">
                     <!-- Logo icon image, you can use font-icon also --><b>
-                    <!--This is dark logo icon--><img src="{% static "/img/helm.svg" %}" alt="home" class="dark-logo"
-                                                      height="30" width="30"/><!--This is light logo icon--><img
-                        src="../plugins/images/admin-logo-dark.png" alt="home" class="light-logo"/>
+                    <!--This is dark logo icon--><img src="{% static "img/helm.svg" %}" alt="home" class="dark-logo"
+                                                      height="30" width="30"/>
+                    <!--This is light logo icon-->
+{#                    <img src="../plugins/images/admin-logo-dark.png" alt="home" class="light-logo"/>#}
                 </b>
                     <!-- Logo text image you can use text also --><span class="hidden-xs">
-                        <!--This is dark logo text--><img src="{% static "/img/textlogo.svg" %}" alt="home"
+                        <!--This is dark logo text--><img src="{% static "img/textlogo.svg" %}" alt="home"
                                                           class="dark-logo" width="120px"/>
-                    <!--This is light logo text--><img src="../plugins/images/admin-text-dark.png" alt="home"
-                                                       class="light-logo"/>
+                    <!--This is light logo text-->
+{#                    <img src="../plugins/images/admin-text-dark.png" alt="home" class="light-logo"/>#}
                      </span>
                 </a>
             </div>
@@ -177,31 +178,31 @@
 <!-- ============================================================== -->
 <!-- All Jquery -->
 <!-- ============================================================== -->
-<script src="{% static "/plugins/bower_components/jquery/dist/jquery.min.js" %}"></script>
+<script src="{% static "plugins/bower_components/jquery/dist/jquery.min.js" %}"></script>
 <!-- Bootstrap Core JavaScript -->
 <script src="{% static "bootstrap/dist/js/bootstrap.min.js" %}"></script>
 <!-- Menu Plugin JavaScript -->
-<script src="{% static "/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js" %}"></script>
+<script src="{% static "plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js" %}"></script>
 <!--slimscroll JavaScript -->
 <script src="{% static "js/jquery.slimscroll.js" %}"></script>
 <!-- Magnific popup JavaScript -->
-<script src="{% static "/plugins/bower_components/Magnific-Popup-master/dist/jquery.magnific-popup.min.js" %}"></script>
-<script src="{% static "/plugins/bower_components/Magnific-Popup-master/dist/jquery.magnific-popup-init.js" %}"></script>
+<script src="{% static "plugins/bower_components/Magnific-Popup-master/dist/jquery.magnific-popup.min.js" %}"></script>
+<script src="{% static "plugins/bower_components/Magnific-Popup-master/dist/jquery.magnific-popup-init.js" %}"></script>
 <!--Wave Effects -->
 <script src="{% static "js/waves.js" %}"></script>
 <!--Counter js -->
-<script src="{% static "/plugins/bower_components/waypoints/lib/jquery.waypoints.js" %}"></script>
-<script src="{% static "/plugins/bower_components/counterup/jquery.counterup.min.js" %}"></script>
+<script src="{% static "plugins/bower_components/waypoints/lib/jquery.waypoints.js" %}"></script>
+<script src="{% static "plugins/bower_components/counterup/jquery.counterup.min.js" %}"></script>
 <!--Morris JavaScript -->
-<script src="{% static "/plugins/bower_components/raphael/raphael-min.js" %}"></script>
-<script src="{% static "/plugins/bower_components/morrisjs/morris.js" %}"></script>
+<script src="{% static "plugins/bower_components/raphael/raphael-min.js" %}"></script>
+<script src="{% static "plugins/bower_components/morrisjs/morris.js" %}"></script>
 <!-- chartist chart -->
-<script src="{% static "/plugins/bower_components/chartist-js/dist/chartist.min.js" %}"></script>
-<script src="{% static "/plugins/bower_components/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js" %}"></script>
+<script src="{% static "plugins/bower_components/chartist-js/dist/chartist.min.js" %}"></script>
+<script src="{% static "plugins/bower_components/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js" %}"></script>
 <!-- Calendar JavaScript -->
-<script src="{% static "/plugins/bower_components/moment/moment.js" %}"></script>
-<script src="{% static '/plugins/bower_components/calendar/dist/fullcalendar.min.js' %}"></script>
-<script src="{% static "/plugins/bower_components/calendar/dist/cal-init.js" %}"></script>
+<script src="{% static "plugins/bower_components/moment/moment.js" %}"></script>
+<script src="{% static 'plugins/bower_components/calendar/dist/fullcalendar.min.js' %}"></script>
+<script src="{% static "plugins/bower_components/calendar/dist/cal-init.js" %}"></script>
 <!-- Custom Theme JavaScript -->
 <script src="{% static "js/custom.min.js" %}"></script>
 {#    <script src="{% static "js/dashboard1.js" %}"></script>#}
@@ -214,9 +215,9 @@
         });
     })();
 </script>
-<script src="{% static "/plugins/bower_components/toast-master/js/jquery.toast.js" %}"></script>
+<script src="{% static "plugins/bower_components/toast-master/js/jquery.toast.js" %}"></script>
 <!--Style Switcher -->
-<script src="{% static "/plugins/bower_components/styleswitcher/jQuery.style.switcher.js" %}"></script>
+<script src="{% static "plugins/bower_components/styleswitcher/jQuery.style.switcher.js" %}"></script>
 {% block scripts %}
 {% endblock %}
 

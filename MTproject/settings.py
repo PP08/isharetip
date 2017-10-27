@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'MacTip.apps.MactipConfig',
     'ckeditor',
     'ckeditor_uploader',
-    # 'storages',
+    'storages',
 
 ]
 
@@ -121,13 +121,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-STATIC_URL = '/static/'
+# STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "MacTip/static"),
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+# STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
 CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
@@ -149,3 +149,17 @@ CKEDITOR_CONFIGS = {
 #     'api_key': os.environ.get('FLICKR_API_KEY', 'dcec0661d67f190220a34c585437694b'),
 #     'user_id': os.environ.get('FLICKR_USER_ID', '128922771@N02')
 # }
+
+AWS_ACCESS_KEY_ID = 'TCIMS2BBAZWX6DREPNMJ'
+AWS_SECRET_ACCESS_KEY = 'aZstfGXezV1GhGgVQK5vOOAyDtz6rfddNz32ez7xdsk'
+AWS_STORAGE_BUCKET_NAME = 'isharetip-db'
+AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400',
+}
+AWS_LOCATION = 'static'
+AWS_S3_ENDPOINT_URL = 'https://nyc3.digitaloceanspaces.com'
+AWS_STATIC_LOCATION = '%s/static' % AWS_LOCATION
+STATIC_URL = "https://%s/%s/" % (AWS_S3_ENDPOINT_URL, AWS_STATIC_LOCATION)
+# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+DEFAULT_FILE_STORAGE = 'MTproject.storage_backends.MediaStorage'
