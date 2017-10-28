@@ -163,8 +163,10 @@ CKEDITOR_CONFIGS = {
 #     'api_key': os.environ.get('FLICKR_API_KEY', 'dcec0661d67f190220a34c585437694b'),
 #     'user_id': os.environ.get('FLICKR_USER_ID', '128922771@N02')
 # }
-SOCIAL_AUTH_FACEBOOK_KEY = '624660647924118'
-SOCIAL_AUTH_FACEBOOK_SECRET = '1bf8f52e4a69e870b19b66ef3f5c9301'
+# SOCIAL_AUTH_FACEBOOK_KEY = '624660647924118'
+# SOCIAL_AUTH_FACEBOOK_SECRET = '1bf8f52e4a69e870b19b66ef3f5c9301'
+SOCIAL_AUTH_FACEBOOK_KEY = '300441047123805'
+SOCIAL_AUTH_FACEBOOK_SECRET = '16cffbe14d6079172c063e299e9d98d0'
 
 # LOGIN_URL = 'login'
 LOGOUT_URL = 'index'
@@ -182,18 +184,18 @@ SOCIAL_AUTH_RAISE_EXCEPTIONS = False
 # 'social_auth.backends.pipeline.user.update_user_details',
 # )
 
-SOCIAL_AUTH_DISCONNECT_PIPELINE = (
-    # Verifies that the social association can be disconnected from the current
-    # user (ensure that the user login mechanism is not compromised by this
-    # disconnection).
-    'social_core.pipeline.disconnect.allowed_to_disconnect',
-
-    # Collects the social associations to disconnect.
-    'social_core.pipeline.disconnect.get_entries',
-
-    # Revoke any access_token when possible.
-    'social_core.pipeline.disconnect.revoke_tokens',
-
-    # Removes the social associations.
-    'social_core.pipeline.disconnect.disconnect',
-)
+# SOCIAL_AUTH_DISCONNECT_PIPELINE = (
+#     # Verifies that the social association can be disconnected from the current
+#     # user (ensure that the user login mechanism is not compromised by this
+#     # disconnection).
+#     'social_core.pipeline.disconnect.allowed_to_disconnect',
+#
+#     # Collects the social associations to disconnect.
+#     'social_core.pipeline.disconnect.get_entries',
+#
+#     # Revoke any access_token when possible.
+#     'social_core.pipeline.disconnect.revoke_tokens',
+#
+#     # Removes the social associations.
+#     'social_core.pipeline.disconnect.disconnect',
+# )
