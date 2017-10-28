@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'MacTip.apps.MactipConfig',
     'ckeditor',
     'ckeditor_uploader',
+    'social_django',
     # 'storages',
 
 ]
@@ -52,6 +53,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'MTproject.urls'
@@ -69,6 +71,10 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 # 'django.template.context_processors.base_info',
+                'social_django.context_processors.backends',  # <--
+                'social_django.context_processors.login_redirect', # <--
+                'MacTip.processor.base_info',
+                'MacTip.processor.user_settings',
             ],
         },
     },
@@ -102,6 +108,14 @@ AUTH_PASSWORD_VALIDATORS = [
     #     'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     # },
 ]
+
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.github.GithubOAuth2',
+    'social_core.backends.twitter.TwitterOAuth',
+    'social_core.backends.facebook.FacebookOAuth2',
+
+    'django.contrib.auth.backends.ModelBackend',
+)
 
 
 # Internationalization
@@ -149,3 +163,37 @@ CKEDITOR_CONFIGS = {
 #     'api_key': os.environ.get('FLICKR_API_KEY', 'dcec0661d67f190220a34c585437694b'),
 #     'user_id': os.environ.get('FLICKR_USER_ID', '128922771@N02')
 # }
+SOCIAL_AUTH_FACEBOOK_KEY = '624660647924118'
+SOCIAL_AUTH_FACEBOOK_SECRET = '1bf8f52e4a69e870b19b66ef3f5c9301'
+
+# LOGIN_URL = 'login'
+LOGOUT_URL = 'index'
+# LOGIN_REDIRECT_URL = 'index'
+# SOCIAL_AUTH_URL_NAMESPACE = 'social'
+LOGIN_ERROR_URL = 'index'
+SOCIAL_AUTH_RAISE_EXCEPTIONS = False
+
+# SOCIAL_AUTH_PIPELINE = (
+# 'social_auth.backends.pipeline.social.social_auth_user',
+# 'social_auth.backends.pipeline.associate.associate_by_email',
+# 'social_auth.backends.pipeline.user.get_username',
+# 'social_auth.backends.pipeline.user.create_user',
+# 'social_auth.backends.pipeline.social.associate_user',
+# 'social_auth.backends.pipeline.user.update_user_details',
+# )
+
+SOCIAL_AUTH_DISCONNECT_PIPELINE = (
+    # Verifies that the social association can be disconnected from the current
+    # user (ensure that the user login mechanism is not compromised by this
+    # disconnection).
+    'social_core.pipeline.disconnect.allowed_to_disconnect',
+
+    # Collects the social associations to disconnect.
+    'social_core.pipeline.disconnect.get_entries',
+
+    # Revoke any access_token when possible.
+    'social_core.pipeline.disconnect.revoke_tokens',
+
+    # Removes the social associations.
+    'social_core.pipeline.disconnect.disconnect',
+)

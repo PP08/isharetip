@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Post, Category
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.contrib.auth import logout as auth_logout
 
 def home(request):
     all_post = Post.objects.all()
@@ -21,3 +22,9 @@ def post_detail(request, slug):
     node = 'Post / ' + str(category)
     # node = "POST"
     return render(request, 'mactip/post_detail.html', {"post": post, 'node': node})
+
+def logout(request):
+    """Logs out user"""
+    next = request.GET['next']
+    auth_logout(request)
+    return redirect(next)
