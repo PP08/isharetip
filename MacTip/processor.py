@@ -1,6 +1,6 @@
 from django.contrib.auth.decorators import login_required
 
-from MacTip.models import Category
+from MacTip.models import Category, UserProfile
 from social_django.models import UserSocialAuth
 
 def base_info(request):
@@ -27,12 +27,15 @@ def user_settings(request):
             else:
                 groupname = 'Anonymous'
             facebook_login = user.social_auth.get(provider='facebook')
+            user_avatar = UserProfile.objects.filter(user=user).first().profile_photo.url
             # print(user.groups.all().first().name)
         except UserSocialAuth.DoesNotExist or AttributeError:
             facebook_login = None
             groupname = "Anonymous"
+            user_avatar = ''
         # can_disconnect = (user.social_auth.count() > 1 or user.has_usable_password())
         return ({
             'facebook_login': facebook_login,
             'groupname': groupname,
+            'user_avatar': user_avatar,
         })

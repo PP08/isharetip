@@ -6,7 +6,8 @@ from django.core.files.base import ContentFile
 # Create your models here.
 from io import BytesIO
 from django.core.files.base import ContentFile
-
+from django.contrib.auth.models import User
+from django.db import models
 
 class Category(models.Model):
     name = models.CharField(max_length=50)
@@ -87,3 +88,11 @@ def crop(im,aspect_ratio=1):
     except:
         pass
     return im
+
+
+class UserProfile(models.Model):
+    user = models.OneToOneField(User)
+    profile_photo = models.ImageField(upload_to='profiles')
+
+    def __str__(self):
+        return "%s's profile" % self.user
