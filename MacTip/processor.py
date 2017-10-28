@@ -21,14 +21,18 @@ def user_settings(request):
         })
     else:
         try:
-            groupname = user.groups.all().first().name
+            groupname = user.groups.all().first()
+            if groupname is not None:
+                groupname = groupname.name
+            else:
+                groupname = 'Anonymous'
             facebook_login = user.social_auth.get(provider='facebook')
             # print(user.groups.all().first().name)
-            return ({
-                'facebook_login': facebook_login,
-                'groupname': groupname,
-            })
         except UserSocialAuth.DoesNotExist or AttributeError:
-            pass
+            facebook_login = None
+            groupname = "Anonymous"
         # can_disconnect = (user.social_auth.count() > 1 or user.has_usable_password())
-
+        return ({
+            'facebook_login': facebook_login,
+            'groupname': groupname,
+        })
