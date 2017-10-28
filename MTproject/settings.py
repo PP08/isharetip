@@ -174,7 +174,7 @@ LOGOUT_URL = 'index'
 # SOCIAL_AUTH_URL_NAMESPACE = 'social'
 LOGIN_ERROR_URL = 'index'
 SOCIAL_AUTH_RAISE_EXCEPTIONS = False
-
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
 # SOCIAL_AUTH_PIPELINE = (
 # 'social_auth.backends.pipeline.social.social_auth_user',
 # 'social_auth.backends.pipeline.associate.associate_by_email',
