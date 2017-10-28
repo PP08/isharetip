@@ -24,7 +24,7 @@ def user_settings(request):
             groupname = user.groups.all().first().name
             facebook_login = user.social_auth.get(provider='facebook')
             # print(user.groups.all().first().name)
-        except UserSocialAuth.DoesNotExist or BaseException or IOError or Exception:
+        except UserSocialAuth.DoesNotExist or AttributeError:
             facebook_login = None
             groupname = "Anonymous"
         # can_disconnect = (user.social_auth.count() > 1 or user.has_usable_password())
