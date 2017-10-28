@@ -108,6 +108,18 @@
                             <b class="hidden-xs">{{ user.first_name}} {{ user.last_name }}</b><span class="caret"></span>
                          </a>
                         <ul class="dropdown-menu dropdown-user animated flipInY">
+
+                            {% if groupname == 'superuser' %}
+                                <li>
+                                    <div class="dw-user-box">
+                                        <div class="u-img"><img src="{% static "/img/useravatar.jpg" %}" alt="user"/></div>
+                                        <div class="u-text">
+                                            <h4>{{ user.last_name }}</h4>
+                                            <p class="text-muted">hello@gmail.com</p><a href="/admin/"
+                                                                                        class="btn btn-rounded btn-danger btn-sm">Admin page</a></div>
+                                    </div>
+                                </li>
+                            {% endif %}
                             <li><a href="{% url 'social:disconnect' 'facebook' %}?next={{ request.get_full_path }}"><i class="fa fa-power-off"></i> Logout</a></li>
                         </ul>
                     {% endif %}

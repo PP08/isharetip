@@ -12,19 +12,22 @@ def base_info(request):
 
 def user_settings(request):
     user = request.user
-    print(user)
+    # print(user)
+
     if user.is_anonymous():
         return ({
             'facebook_login': None,
-            # 'can_disconnect': False
+            'groupname': 'Anonymous',
         })
     else:
+        groupname = user.groups.all().first().name
         try:
             facebook_login = user.social_auth.get(provider='facebook')
+            # print(user.groups.all().first().name)
         except UserSocialAuth.DoesNotExist:
             facebook_login = None
         # can_disconnect = (user.social_auth.count() > 1 or user.has_usable_password())
         return ({
             'facebook_login': facebook_login,
-            # 'can_disconnect': can_disconnect
+            'groupname': groupname,
         })
