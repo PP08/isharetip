@@ -17,7 +17,8 @@ services:
         condition: on-failure
     expose:
       - "8000"
-    command: uwsgi --http :8000 --module MTproject.wsgi
+#    command: uwsgi --http :8000 --module MTproject.wsgi
+    command: uwsgi --ini mysite_uwsgi.ini
     volumes:
       - .:/app
     depends_on:
