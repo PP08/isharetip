@@ -31,8 +31,11 @@
                         </div>
 
                         {{ app.description|safe }}
+                        <div class="row" style="margin-top: 15px; margin-bottom: 15px;">
+                            <div class="col-md-3 col-md-offset-2"><a href="{{ app.download_link.0 }}" class="fcbtn btn btn-primary btn-outline btn-1c">Server 1</a></div>
+                            <div class="col-md-3 col-md-offset-2"><a href="{{ app.download_link.1 }}" class="fcbtn btn btn-info btn-outline btn-1c">Server 2</a></div>
+                        </div>
 
-                        {{ app.download_link.0 }}
 
                     </div>
                     <div class="panel-footer">
