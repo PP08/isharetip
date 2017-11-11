@@ -52,5 +52,11 @@ services:
         constraints: [node.role == manager]
     networks:
       - webnet
+  mongo:
+    image: mongo
+    volumes:
+      - ./data/db:/data/db
+    networks:
+      - webnet
 networks:
   webnet:
