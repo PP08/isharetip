@@ -39,16 +39,15 @@ def listapps(request):
     # apps = list(table.find().limit(30))
     # return render(request, 'mactip/listapps.html', {"apps": apps})
     all_apps = list(table.find())
-    if all_apps:
-        try:
-            page = request.GET.get('page', 1)
-            paginator = Paginator(all_apps, 12)
-            apps = paginator.page(page)
-        except PageNotAnInteger:
-            apps = paginator.page(1)
-        except EmptyPage:
-            apps = paginator.page(paginator.num_pages)
-        return render(request, 'mactip/listapps.html', {'apps': apps, 'node': 'Apps'})
+    try:
+        page = request.GET.get('page', 1)
+        paginator = Paginator(all_apps, 12)
+        apps = paginator.page(page)
+    except PageNotAnInteger:
+        apps = paginator.page(1)
+    except EmptyPage:
+        apps = paginator.page(paginator.num_pages)
+    return render(request, 'mactip/listapps.html', {'apps': apps, 'node': 'Apps'})
 
 def appdetail(request, slug):
     ''''''
