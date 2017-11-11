@@ -15,7 +15,7 @@
                         </div>
                         <div class="product-text">
                             {% if app.price %}
-                                <span class="pro-price bg-danger">{{ app.price }}</span>
+{#                                <span class="pro-price bg-danger">{{ app.price }}</span>#}
                             {% endif %}
                             <a href="{% url 'app_detail' slug=app.slug %}"><h3
                                     class="box-title m-b-0">{{ app.name | truncatechars:25 }}</h3></a>
