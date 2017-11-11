@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="100%" height="100%" viewBox="0 0 95 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
-    <g transform="matrix(1,0,0,1,-15.7125,-22.2917)">
-        <g transform="matrix(1,0,0,1,-10.1997,24.5914)">
-            <path d="M28.112,-2.3L25.912,9.584L27.679,9.584L28.829,2.967L32.012,9.8L35.196,2.967L36.346,9.584L38.112,9.584L35.912,-2.3L32.012,6.1L28.112,-2.3Z" style="fill:white;fill-rule:nonzero;"/>
-            <path d="M47.246,9.584L49.046,9.584L44.112,-2.3L39.179,9.584L40.979,9.584L41.962,7.117L46.262,7.117L47.246,9.584ZM44.112,1.667L45.646,5.6L42.562,5.6L44.112,1.667Z" style="fill:white;fill-rule:nonzero;"/>
-            <path d="M55.312,9.8C56.162,9.8 57.046,9.6 57.629,9.317L57.629,7.5C56.962,7.9 56.246,8.134 55.312,8.134C52.896,8.134 51.112,6.284 51.112,3.767C51.112,1.234 52.896,-0.616 55.312,-0.616C56.246,-0.616 56.962,-0.383 57.629,0.017L57.629,-1.8C57.046,-2.083 56.162,-2.283 55.312,-2.283C51.846,-2.283 49.329,0.417 49.329,3.767C49.329,7.1 51.846,9.8 55.312,9.8Z" style="fill:white;fill-rule:nonzero;"/>
-            <path d="M61.846,9.584L63.546,9.584L63.546,-0.5L66.429,-0.5L66.429,-2.083L58.962,-2.083L58.962,-0.5L61.846,-0.5L61.846,9.584Z" style="fill:white;fill-rule:nonzero;"/>
-            <rect x="68.129" y="-2.083" width="1.7" height="11.667" style="fill:white;fill-rule:nonzero;"/>
-            <path d="M80.296,1.8C80.296,-0.333 78.579,-2.083 76.446,-2.083L72.329,-2.083L72.329,9.584L74.029,9.584L74.029,5.684L76.446,5.684C78.579,5.684 80.296,3.95 80.296,1.8ZM78.562,1.8C78.562,3.067 77.612,4.1 76.212,4.1L74.029,4.1L74.029,-0.5L76.212,-0.5C77.612,-0.5 78.562,0.534 78.562,1.8Z" style="fill:white;fill-rule:nonzero;"/>
-            <path d="M81.629,8.684C81.629,9.3 82.129,9.8 82.746,9.8C83.362,9.8 83.862,9.3 83.862,8.684C83.862,8.067 83.362,7.567 82.746,7.567C82.129,7.567 81.629,8.067 81.629,8.684Z" style="fill:white;fill-rule:nonzero;"/>
-            <path d="M91.146,9.8C91.996,9.8 92.879,9.6 93.462,9.317L93.462,7.5C92.796,7.9 92.079,8.134 91.146,8.134C88.729,8.134 86.946,6.284 86.946,3.767C86.946,1.234 88.729,-0.616 91.146,-0.616C92.079,-0.616 92.796,-0.383 93.462,0.017L93.462,-1.8C92.879,-2.083 91.996,-2.283 91.146,-2.283C87.679,-2.283 85.162,0.417 85.162,3.767C85.162,7.1 87.679,9.8 91.146,9.8Z" style="fill:white;fill-rule:nonzero;"/>
-            <path d="M100.862,9.8C104.329,9.8 106.846,7.1 106.846,3.767C106.846,0.417 104.329,-2.283 100.862,-2.283C97.396,-2.283 94.879,0.417 94.879,3.767C94.879,7.1 97.396,9.8 100.862,9.8ZM100.862,-0.616C103.279,-0.616 105.062,1.234 105.062,3.767C105.062,6.284 103.279,8.134 100.862,8.134C98.446,8.134 96.662,6.284 96.662,3.767C96.662,1.234 98.446,-0.616 100.862,-0.616Z" style="fill:white;fill-rule:nonzero;"/>
-            <path d="M110.229,-2.3L108.029,9.584L109.796,9.584L110.946,2.967L114.129,9.8L117.312,2.967L118.462,9.584L120.229,9.584L118.029,-2.3L114.129,6.1L110.229,-2.3Z" style="fill:white;fill-rule:nonzero;"/>
+<svg width="100%" height="100%" viewBox="0 0 1467 489" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g transform="matrix(1,0,0,1,-507.074,-1379.26)">
+        <g transform="matrix(1,0,0,1,401.043,297)">
+            <text x="336.927px" y="1366.66px" style="font-family:'Elianto-Regular', 'Elianto';font-size:125px;fill:white;">ISHARETIP.COM</text>
+        </g>
+        <g transform="matrix(1,0,0,1,52.1575,-23.6563)">
+            <path d="M1445.21,1878L1919,1878L1919,1405L457,1405L457,1878L930.79,1878" style="fill:none;stroke:white;stroke-width:4.17px;"/>
+        </g>
+        <g transform="matrix(1,0,0,1,-18.0646,41.2895)">
+            <text x="1060.41px" y="1826.05px" style="font-family:'Anders';font-size:41.667px;fill:white;">S<tspan x="1085.08px 1119.54px 1149.41px 1174.99px 1184.62px 1220.12px 1251.74px 1265.62px 1294.62px 1324.66px 1354.54px 1380.12px 1389.74px 1425.24px " y="1826.05px 1826.05px 1826.05px 1826.05px 1826.05px 1826.05px 1826.05px 1826.05px 1826.05px 1826.05px 1826.05px 1826.05px 1826.05px 1826.05px ">HARINGISCARING</tspan></text>
         </g>
     </g>
 </svg>
