@@ -2,6 +2,10 @@ from django.shortcuts import render, redirect
 from .models import Post, Category
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.auth import logout as auth_logout
+from pymongo import MongoClient
+client = MongoClient()
+db = client.database
+table = db.macapps
 
 def home(request):
     all_post = Post.objects.all()
@@ -28,3 +32,26 @@ def logout(request):
     next = request.GET['next']
     auth_logout(request)
     return redirect(next)
+
+def listapps(request):
+    ''''''
+    # apps = list(table.find().limit(30))
+    # return render(request, 'mactip/listapps.html', {"apps": apps})
+    all_apps = list(table.find())
+    page = request.GET.get('page', 1)
+    paginator = Paginator(all_apps, 12)
+    try:
+        apps = paginator.page(page)
+    except PageNotAnInteger:
+        apps = paginator.page(1)
+    except EmptyPage:
+        apps = paginator.page(paginator.num_pages)
+
+    return render(request, 'mactip/listapps.html', {'apps': apps, 'node': 'Apps'})
+
+def appdetail(request, slug):
+    ''''''
+    app = dict(table.find_one({"slug": slug}))
+    print(app)
+
+    return render(request, 'mactip/appdetail.html', {"app": app})
