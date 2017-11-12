@@ -3,6 +3,7 @@ from .models import Post, Category
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.auth import logout as auth_logout
 from pymongo import MongoClient
+import pymongo
 
 client = MongoClient("mongo", 27017)
 db = client.database
@@ -38,7 +39,7 @@ def listapps(request):
     ''''''
     # apps = list(table.find().limit(30))
     # return render(request, 'mactip/listapps.html', {"apps": apps})
-    all_apps = list(table.find())
+    all_apps = list(table.find().sort('date_upload', pymongo.DESCENDING))
     try:
         page = request.GET.get('page', 1)
         paginator = Paginator(all_apps, 12)
