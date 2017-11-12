@@ -17,9 +17,10 @@
                             {% if app.price %}
 {#                                <span class="pro-price bg-danger">{{ app.price }}</span>#}
                             {% endif %}
-                            <a href="{% url 'app_detail' slug=app.slug %}"><h3
-                                    class="box-title m-b-0">{{ app.name | truncatechars:25 }}</h3></a>
-                            <small class="text-muted db">{{ app.date_upload|date }}</small>
+                            <a href="{% url 'app_detail' slug=app.slug %}">
+                                <h3 class="box-title m-b-0">{{ app.name | truncatechars:25 }}</h3></a>
+                            <small class="text-muted db">{{ app.date_upload|date }} <span class="pull-right"><a href="#"><small class="label label-info m-l-5">{{ app.category.0 }}</small></a></span></small>
+
                         </div>
                     </div>
                 </div>

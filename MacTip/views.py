@@ -55,4 +55,4 @@ def appdetail(request, slug):
     app = dict(table.find_one({"slug": slug}))
     print(app)
 
-    return render(request, 'mactip/appdetail.html', {"app": app})
+    return render(request, 'mactip/appdetail.html', {"app": app, 'node': 'Apps'})
