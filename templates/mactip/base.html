@@ -10,6 +10,11 @@
     <meta property="fb:app_id" content="300441047123805"/>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,600,700&amp;subset=vietnamese"
           rel="stylesheet">
+
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common-material.min.css" />
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.material.min.css" />
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.material.mobile.min.css" />
+
     <link rel="icon" type="image/png" sizes="16x16" href="{% static "/plugins/images/favicon.png" %}">
     <title>isharetip | because Sharing is Caring</title>
     <!-- Bootstrap Core CSS -->
@@ -90,18 +95,11 @@
                 <li> <a class="waves-effect waves-light" href="{% url 'list_apps'%}" aria-expanded="false"><span class="hidden-xs">Apps</span></a>
 
                     </li>
-
             </ul>
+            
 
-
+        
             <ul class="nav navbar-top-links navbar-right pull-right">
-
-                <li>
-                    <form role="search" class="app-search hidden-sm hidden-xs m-r-10">
-                        <input type="text" placeholder="Search..." class="form-control"> <a href=""><i
-                            class="fa fa-search"></i></a></form>
-                </li>
-
                 <li class="dropdown">
                     {% if facebook_login == None %}
                         <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#">
@@ -134,37 +132,28 @@
                     {% endif %}
                     <!-- /.dropdown-user -->
                 </li>
-                <!-- /.dropdown -->
-                {#                    <li class="dropdown">#}
-                {#                        <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"> <img src="../plugins/images/users/varun.jpg" alt="user-img" width="36" class="img-circle"><b class="hidden-xs">Steave</b><span class="caret"></span> </a>#}
-                {#                        <ul class="dropdown-menu dropdown-user animated flipInY">#}
-                {#                            <li>#}
-                {#                                <div class="dw-user-box">#}
-                {#                                    <div class="u-img"><img src="../plugins/images/users/varun.jpg" alt="user" /></div>#}
-                {#                                    <div class="u-text">#}
-                {#                                        <h4>Steave Jobs</h4>#}
-                {#                                        <p class="text-muted">varun@gmail.com</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a></div>#}
-                {#                                </div>#}
-                {#                            </li>#}
-                {#                            <li role="separator" class="divider"></li>#}
-                {#                            <li><a href="#"><i class="ti-user"></i> My Profile</a></li>#}
-                {#                            <li><a href="#"><i class="ti-wallet"></i> My Balance</a></li>#}
-                {#                            <li><a href="#"><i class="ti-email"></i> Inbox</a></li>#}
-                {#                            <li role="separator" class="divider"></li>#}
-                {#                            <li><a href="#"><i class="ti-settings"></i> Account Setting</a></li>#}
-                {#                            <li role="separator" class="divider"></li>#}
-                {#                            <li><a href="#"><i class="fa fa-power-off"></i> Logout</a></li>#}
-                {#                        </ul>#}
-                {#                        <!-- /.dropdown-user -->#}
-                {#                    </li>#}
-
-                <!-- /.dropdown -->
             </ul>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+                               <form>
+                <div class="form-group" style="margin-bottom: 0px; margin-top: 12px;">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="customers" placeholder="Search..." style="background-color: white">
+                        <div class="input-group-addon" style="background-color: transparent"><button type="submit" class="btn-info btn-outline" style="padding: 0px;"><i class="ti-search" style="color: white"></i></button></div>
+                    </div>
+                </div>
+            </form>
+                </div>
+            </div>
+
         </div>
+
         <!-- /.navbar-header -->
         <!-- /.navbar-top-links -->
         <!-- /.navbar-static-side -->
     </nav>
+
+
     <!-- End Top Navigation -->
     <!-- ============================================================== -->
     <!-- Left Sidebar - style you can find in sidebar.scss  -->
@@ -205,12 +194,7 @@
                     {% if groupname == 'superuser' %}
                         <a href="{% url 'admin:MacTip_post_add' %}" target="_blank" class="btn btn-danger btn-rounded pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light"><i class="ti-plus"></i> New Post</a>
                     {% endif %}
-{#                        <button class="right-side-toggle waves-effect waves-light btn-info btn-circle pull-right m-l-20"><i class="ti-settings text-white"></i></button>#}
 
-{#                        <ol class="breadcrumb">#}
-{#                            <li><a href="#">Dashboard</a></li>#}
-{#                            <li class="active">Dashboard 1</li>#}
-{#                        </ol>#}
                     </div>
 
                 <!-- /.col-lg-12 -->
@@ -219,6 +203,81 @@
             <!-- .row -->
             {% block content %}
             {% endblock %}
+
+
+
+{#            <input id="customers" style="width: 100%;"/>#}
+            <style>
+
+                .dropdown-header {
+                    border-width: 0 0 1px 0;
+                    text-transform: uppercase;
+                }
+
+                .dropdown-header > span {
+                    display: inline-block;
+                    padding: 10px;
+                }
+
+                .dropdown-header > span:first-child {
+                    width: 50px;
+                }
+
+                .k-list-container > .k-footer {
+                    padding: 10px;
+                }
+
+                #customers-list .k-item {
+                    line-height: 1em;
+                    min-width: 300px;
+                }
+
+                /* Material Theme padding adjustment*/
+
+                .k-material #customers-list .k-item,
+                .k-material #customers-list .k-item.k-state-hover,
+                .k-materialblack #customers-list .k-item,
+                .k-materialblack #customers-list .k-item.k-state-hover {
+                    padding-left: 5px;
+                    border-left: 0;
+                }
+
+                #customers-list .k-item > span {
+                    -webkit-box-sizing: border-box;
+                    -moz-box-sizing: border-box;
+                    box-sizing: border-box;
+                    display: inline-block;
+                    vertical-align: top;
+                    margin: 20px 10px 10px 5px;
+                }
+
+                #customers-list .k-item > span:first-child {
+                    -moz-box-shadow: inset 0 0 30px rgba(0,0,0,.3);
+                    -webkit-box-shadow: inset 0 0 30px rgba(0,0,0,.3);
+                    box-shadow: inset 0 0 30px rgba(0,0,0,.3);
+                    margin: 10px;
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    background-size: 100%;
+                    background-repeat: no-repeat;
+                }
+
+                #customers-list h3 {
+                    font-size: 1.2em;
+                    font-weight: normal;
+                    margin: 0 0 1px 0;
+                    padding: 0;
+                }
+
+                #customers-list p {
+                    margin: 0;
+                    padding: 0;
+                    font-size: .8em;
+                }
+
+            </style>
+
 
         </div>
         <!-- /.container-fluid -->
@@ -235,6 +294,35 @@
 <!-- All Jquery -->
 <!-- ============================================================== -->
 <script src="{% static "/plugins/bower_components/jquery/dist/jquery.min.js" %}"></script>
+
+<script src="https://kendo.cdn.telerik.com/2017.3.1026/js/jquery.min.js"></script>
+<script src="https://kendo.cdn.telerik.com/2017.3.1026/js/kendo.all.min.js"></script>
+
+<script>
+                $(document).ready(function() {
+                    var autocomplete = $("#customers").kendoAutoComplete({
+                        minLength: 1,
+                        dataTextField: "ContactName",
+{#                        headerTemplate: '<div class="dropdown-header k-widget k-header">' +#}
+{#                                '<span>Photo</span>' +#}
+{#                                '<span>Contact info</span>' +#}
+{#                            '</div>',#}
+                        footerTemplate: 'Total #: instance.dataSource.total() # items found',
+                        template: '<span class="k-state-default" style="background-image: url(\'http://www.isharetip.com/static/img/useravatar.jpg\')"></span>' +
+                                  '<span class="k-state-default"><h3>#: data.ContactName #</h3><p>#: data.ProductName #</p></span>',
+                        dataSource: {
+                            transport: {
+                                read:{
+                                    dataType: "json",
+                                    url: "https://demos.telerik.com/kendo-ui/service/products"
+                                }
+                            }
+                        },
+                        height: 400
+                    }).data("kendoAutoComplete");
+                });
+            </script>
+
 <!-- Bootstrap Core JavaScript -->
 <script src="{% static "bootstrap/dist/js/bootstrap.min.js" %}"></script>
 <!-- Menu Plugin JavaScript -->
@@ -276,7 +364,6 @@
 <script src="{% static "/plugins/bower_components/styleswitcher/jQuery.style.switcher.js" %}"></script>
 {% block scripts %}
 {% endblock %}
-
 <div id="fb-root"></div>
 <script>(function (d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
@@ -286,6 +373,9 @@
     js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.10&appId=300441047123805';
     fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
+
+
+
 </body>
 
 </html>

@@ -56,3 +56,6 @@ def appdetail(request, slug):
     print(app)
 
     return render(request, 'mactip/appdetail.html', {"app": app, 'node': 'Apps'})
+
+def testAutoComplete(request):
+    return render(request, 'mactip/autocomplete.html')

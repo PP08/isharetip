@@ -60,3 +60,24 @@ html body.fix-header div#wrapper div#page-wrapper div.container-fluid div div.pa
 .post-detail-content {
     padding: 0;
 }
+
+
+/*#custom-search-form {*/
+        /*margin:0;*/
+        /*margin-top: 5px;*/
+        /*padding: 0;*/
+    /*}*/
+
+/*.k-widget.k-autocomplete.k-header.form-control.k-autocomplete-clearable.k-state-default {*/
+    /*border-radius: 2px 0 0 2px;*/
+/*}*/
+
+/*.input-group-addon {*/
+    /*background: white;*/
+/*}*/
+
+/*#customers {*/
+    /*width: 100%;*/
+    /*background: white;*/
+    /*border-radius: 100px;*/
+/*}*/
