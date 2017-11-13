@@ -64,10 +64,11 @@ var substringMatcher = function(strs) {
 //   prefetch: '/static/data/db/backup/macapps.json'
 // });
 var apps = new Bloodhound({
-  datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
-  queryTokenizer: Bloodhound.tokenizers.whitespace,
-  identify: function(obj) { return obj.name; },
-  prefetch: '/static/data/db/backup/macapps.json'
+    datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+    queryTokenizer: Bloodhound.tokenizers.whitespace,
+    identify: function(obj) { return obj.name; },
+    prefetch: '/static/data/db/backup/macapps.json',
+    ttl:1
 });
 // passing in `null` for the `options` arguments will result in the default
 // options being used
