@@ -62,7 +62,7 @@ def testAutoComplete(request):
 
 def search(request):
     appname = request.GET["appname"]
-    all_apps = list(table.find({"name": {"$regex" : "/{}/".format(appname)}}).sort('date_upload', pymongo.DESCENDING))
+    all_apps = list(table.find({"name": {"$regex" : "{}".format(appname)}}).sort('date_upload', pymongo.DESCENDING))
     try:
         page = request.GET.get('page', 1)
         paginator = Paginator(all_apps, 12)
