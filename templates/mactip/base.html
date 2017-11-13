@@ -309,12 +309,12 @@
 {#                            '</div>',#}
                         footerTemplate: 'Total #: instance.dataSource.total() # items found',
                         template: '<span class="k-state-default" style="background-image: url(\'http://www.isharetip.com/static/img/useravatar.jpg\')"></span>' +
-                                  '<span class="k-state-default"><h3>#: data.ContactName #</h3><p>#: data.ProductName #</p></span>',
+                                  '<span class="k-state-default"><h3>#: data.ContactName #</h3><p>#: data.CompanyName #</p></span>',
                         dataSource: {
                             transport: {
                                 read:{
-                                    dataType: "json",
-                                    url: "https://demos.telerik.com/kendo-ui/service/products"
+                                    dataType: "jsonp",
+                                    url: "https://demos.telerik.com/kendo-ui/service/Customers"
                                 }
                             }
                         },
