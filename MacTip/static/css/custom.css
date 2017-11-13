@@ -61,23 +61,28 @@ html body.fix-header div#wrapper div#page-wrapper div.container-fluid div div.pa
     padding: 0;
 }
 
+.typeahead.form-control.tt-hint {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-color: transparent;
+    box-shadow: none;
+    opacity: 1;
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: rgba(255, 255, 255, 0.901961);
+    background-image: none;
+    background-origin: padding-box;
+    background-size: auto;
+    background-position: 0% 0%;
+    background-repeat: repeat repeat;
+    width: 300px;
+}
 
-/*#custom-search-form {*/
-        /*margin:0;*/
-        /*margin-top: 5px;*/
-        /*padding: 0;*/
-    /*}*/
-
-/*.k-widget.k-autocomplete.k-header.form-control.k-autocomplete-clearable.k-state-default {*/
-    /*border-radius: 2px 0 0 2px;*/
-/*}*/
-
-/*.input-group-addon {*/
-    /*background: white;*/
-/*}*/
-
-/*#customers {*/
-    /*width: 100%;*/
-    /*background: white;*/
-    /*border-radius: 100px;*/
-/*}*/
+.app-search a {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    color: #4c5667;
+    z-index: 1000;
+}
