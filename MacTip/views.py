@@ -59,3 +59,16 @@ def appdetail(request, slug):
 
 def testAutoComplete(request):
     return render(request, 'mactip/autocomplete.html')
+
+def search(request):
+    appname = request.GET["appname"]
+    all_apps = list(table.find({"name": appname}).sort('date_upload', pymongo.DESCENDING))
+    try:
+        page = request.GET.get('page', 1)
+        paginator = Paginator(all_apps, 12)
+        apps = paginator.page(page)
+    except PageNotAnInteger:
+        apps = paginator.page(1)
+    except EmptyPage:
+        apps = paginator.page(paginator.num_pages)
+    return render(request, 'mactip/listapps.html', {'apps': apps, 'node': 'Apps'})
