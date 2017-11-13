@@ -4,6 +4,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.auth import logout as auth_logout
 from pymongo import MongoClient
 import pymongo
+import re
 
 client = MongoClient("mongo", 27017)
 db = client.database
@@ -62,7 +63,8 @@ def testAutoComplete(request):
 
 def search(request):
     appname = request.GET["appname"]
-    all_apps = list(table.find({"name": {"$regex" : "{}".format(appname)}}).sort('date_upload', pymongo.DESCENDING))
+    reg = re.compile(r'.*{}.*'.format(appname), re.I)
+    all_apps = list(table.find({"name": {"$regex" : reg}}).sort('date_upload', pymongo.DESCENDING))
     try:
         page = request.GET.get('page', 1)
         paginator = Paginator(all_apps, 12)
