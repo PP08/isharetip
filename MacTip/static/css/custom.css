@@ -87,6 +87,6 @@ html body.fix-header div#wrapper div#page-wrapper div.container-fluid div div.pa
     z-index: 1000;
 }
 
-img {
+.panel-body > img {
     width: 100% !important;
 }
