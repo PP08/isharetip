@@ -89,4 +89,6 @@ html body.fix-header div#wrapper div#page-wrapper div.container-fluid div div.pa
 
 div.panel-body img {
     width: 100% !important;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
