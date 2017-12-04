@@ -86,3 +86,7 @@ html body.fix-header div#wrapper div#page-wrapper div.container-fluid div div.pa
     color: #4c5667;
     z-index: 1000;
 }
+
+img {
+    width: 100% !important;
+}
