@@ -191,9 +191,9 @@
                         class="hide-menu">App Category <span class="fa arrow"></span> <span
                         class="label label-rouded label-inverse pull-right">{{ app_categories_amount }}</span></span></a>
                     <ul class="nav nav-second-level">
-                        {% for category in app_categories %}
-                            <li><a href="{% url 'app_category' category=category|genSlug %}"><i class=" fa-fw">{{ forloop.counter }}</i><span
-                                    class="hide-menu">{{ category }}</span></a></li>
+                        {% for cate in app_categories %}
+                            <li><a href="{% url 'app_category' category=cate|genSlug %}"><i class=" fa-fw">{{ forloop.counter }}</i><span
+                                    class="hide-menu">{{ cate }}</span></a></li>
                         {% endfor %}
                     </ul>
                 </li>
