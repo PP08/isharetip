@@ -9,4 +9,5 @@ urlpatterns = [
     url(r'^macapps/(?P<slug>\S+)/$', views.appdetail, name='app_detail'),
     url(r'^test/$', views.testAutoComplete, name='testautocomplete'),
     url(r'^search/', views.search, name='search'),
+    url(r'^category/(?P<category>\S+)/$', views.category, name='app_category'),
 ]

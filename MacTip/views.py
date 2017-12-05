@@ -74,3 +74,16 @@ def search(request):
     except EmptyPage:
         apps = paginator.page(paginator.num_pages)
     return render(request, 'mactip/listapps.html', {'apps': apps, 'node': 'Apps'})
+
+def category(request, category):
+    ''''''
+    all_apps = list(table.find({"category": category}).sort('date_upload', pymongo.DESCENDING))
+    try:
+        page = request.GET.get('page', 1)
+        paginator = Paginator(all_apps, 12)
+        apps = paginator.page(page)
+    except PageNotAnInteger:
+        apps = paginator.page(1)
+    except EmptyPage:
+        apps = paginator.page(paginator.num_pages)
+    return render(request, 'mactip/listapps.html', {'apps': apps, 'node': category})
