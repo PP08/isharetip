@@ -4,4 +4,4 @@ register = template.Library()
 
 @register.filter()
 def genSlug(category):
-    return category.replace(' ', '-')
+    return str(category[0]).replace(' ', '-')
