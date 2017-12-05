@@ -177,11 +177,19 @@
                     <span class="hide-menu">Navigation</span></h3></div>
             <ul class="nav" id="side-menu">
                 <li><a href="..." class="waves-effect"><i class="mdi mdi-av-timer fa-fw" data-icon="v"></i> <span
-                        class="hide-menu"> Category <span class="fa arrow"></span> <span
+                        class="hide-menu">Posts Category <span class="fa arrow"></span> <span
                         class="label label-rouded label-inverse pull-right">{{ categories_amount }}</span></span></a>
                     <ul class="nav nav-second-level">
-                        <li><a href="#"><i class="fa-apple"></i><span
-                                    class="hide-menu">Apps Category</span></a></li>
+                        {% for category in categories %}
+                            <li><a href="#"><i class=" fa-fw">{{ forloop.counter }}</i><span
+                                    class="hide-menu">{{ category.name }}</span></a></li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                <li><a href="..." class="waves-effect"><i class="fa fa-apple" data-icon="v"></i> <span
+                        class="hide-menu">Apps Category <span class="fa arrow"></span> <span
+                        class="label label-rouded label-inverse pull-right">{{ categories_amount }}</span></span></a>
+                    <ul class="nav nav-second-level">
                         {% for category in categories %}
                             <li><a href="#"><i class=" fa-fw">{{ forloop.counter }}</i><span
                                     class="hide-menu">{{ category.name }}</span></a></li>
