@@ -177,20 +177,20 @@
                     <span class="hide-menu">Navigation</span></h3></div>
             <ul class="nav" id="side-menu">
                 <li><a href="..." class="waves-effect"><i class="mdi mdi-av-timer fa-fw" data-icon="v"></i> <span
-                        class="hide-menu">Posts Category <span class="fa arrow"></span> <span
-                        class="label label-rouded label-inverse pull-right">{{ categories_amount }}</span></span></a>
+                        class="hide-menu">Post Category <span class="fa arrow"></span> <span
+                        class="label label-rouded label-inverse pull-right">{{ post_categories_amount }}</span></span></a>
                     <ul class="nav nav-second-level">
-                        {% for category in categories %}
+                        {% for category in post_categories %}
                             <li><a href="#"><i class=" fa-fw">{{ forloop.counter }}</i><span
                                     class="hide-menu">{{ category.name }}</span></a></li>
                         {% endfor %}
                     </ul>
                 </li>
                 <li><a href="..." class="waves-effect"><i class="mdi mdi-apple fa-fw" data-icon="v"></i> <span
-                        class="hide-menu">Apps Category <span class="fa arrow"></span> <span
-                        class="label label-rouded label-inverse pull-right">{{ categories_amount }}</span></span></a>
+                        class="hide-menu">App Category <span class="fa arrow"></span> <span
+                        class="label label-rouded label-inverse pull-right">{{ app_categories_amount }}</span></span></a>
                     <ul class="nav nav-second-level">
-                        {% for category in categories %}
+                        {% for category in app_categories %}
                             <li><a href="#"><i class=" fa-fw">{{ forloop.counter }}</i><span
                                     class="hide-menu">{{ category.name }}</span></a></li>
                         {% endfor %}

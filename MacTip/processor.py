@@ -2,11 +2,19 @@ from django.contrib.auth.decorators import login_required
 
 from MacTip.models import Category, UserProfile
 from social_django.models import UserSocialAuth
+from pymongo import MongoClient
+
+client = MongoClient()
+db = client.database
+tb = db.category
 
 def base_info(request):
-    categories = Category.objects.all()
-    categories_amount = categories.count()
-    base_info = {"categories": categories, "categories_amount": categories_amount}
+    post_categories = Category.objects.all()
+    post_categories_amount = post_categories.count()
+    app_categories = list(tb.find())
+    app_categories_amount = len(app_categories)
+    base_info = {"post_categories": post_categories, "post_categories_amount": post_categories_amount,
+                 "app_categories": app_categories, "app_categories_amount": app_categories_amount,}
     return base_info
 
 
