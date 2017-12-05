@@ -77,7 +77,7 @@ def search(request):
 
 def category(request, category):
     ''''''
-    if  '-' in str(category):
+    if '-' in str(category):
         original_category = str(category).replace('-', ' ')
     else:
         original_category = str(category)
