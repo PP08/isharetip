@@ -180,6 +180,8 @@
                         class="hide-menu"> Category <span class="fa arrow"></span> <span
                         class="label label-rouded label-inverse pull-right">{{ categories_amount }}</span></span></a>
                     <ul class="nav nav-second-level">
+                        <li><a href="#"><i class="fa-apple"></i><span
+                                    class="hide-menu">Apps Category</span></a></li>
                         {% for category in categories %}
                             <li><a href="#"><i class=" fa-fw">{{ forloop.counter }}</i><span
                                     class="hide-menu">{{ category.name }}</span></a></li>
