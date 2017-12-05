@@ -14,7 +14,7 @@ def base_info(request):
     app_categories = list(tb.find())
     app_categories = [x["name"] for x in app_categories]
     app_categories = sum(app_categories, [])
-    app_categories = list(set(app_categories))
+    app_categories = sorted(list(set(app_categories)))
     app_categories_amount = len(app_categories)
     base_info = {"post_categories": post_categories, "post_categories_amount": post_categories_amount,
                  "app_categories": app_categories, "app_categories_amount": app_categories_amount,}
