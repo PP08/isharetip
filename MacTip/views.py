@@ -77,6 +77,7 @@ def search(request):
 
 def category(request, category):
     ''''''
+    category = category.replace('-', '')
     all_apps = list(table.find({"category": category}).sort('date_upload', pymongo.DESCENDING))
     try:
         page = request.GET.get('page', 1)
