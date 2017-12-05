@@ -6,7 +6,7 @@
         <div class="row infinite-item">
             {% for app in apps %}
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <div class="white-box">
+                    <div class="white-box app">
                         <div class="product-img">
                             <a href="{% url 'app_detail' slug=app.slug %}"><img src="http://isharetip.com:8080/upload/w_75,h_75,q_100/{{ app.icon }}"
                                  style="margin-bottom: 30px;"></a>

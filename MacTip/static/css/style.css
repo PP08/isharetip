@@ -17205,3 +17205,7 @@ h6 small,
     top: -30px;
     right: 0
 }
+
+.app:hover {
+    box-shadow: 0px 12px 25px #0d0e09;
+}
