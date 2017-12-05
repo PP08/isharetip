@@ -6,7 +6,7 @@ from pymongo import MongoClient
 
 client = MongoClient("mongo", 27017)
 db = client.database
-tb = db.macapps
+tb = db.category
 
 def base_info(request):
     post_categories = Category.objects.all()
