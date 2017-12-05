@@ -77,8 +77,11 @@ def search(request):
 
 def category(request, category):
     ''''''
-    category = category.replace('-', ' ')
-    all_apps = list(table.find({"category": category}).sort('date_upload', pymongo.DESCENDING))
+    if  '-' in str(category):
+        original_category = str(category).replace('-', ' ')
+    else:
+        original_category = str(category)
+    all_apps = list(table.find({"category": original_category}).sort('date_upload', pymongo.DESCENDING))
     try:
         page = request.GET.get('page', 1)
         paginator = Paginator(all_apps, 12)
@@ -87,4 +90,4 @@ def category(request, category):
         apps = paginator.page(1)
     except EmptyPage:
         apps = paginator.page(paginator.num_pages)
-    return render(request, 'mactip/listapps.html', {'apps': apps, 'node': category})
+    return render(request, 'mactip/listapps.html', {'apps': apps, 'node': original_category})
