@@ -12,6 +12,8 @@ def base_info(request):
     post_categories = Category.objects.all()
     post_categories_amount = post_categories.count()
     app_categories = list(tb.find())
+    app_categories = sum(app_categories, [])
+    app_categories = list(set(app_categories))
     app_categories_amount = len(app_categories)
     base_info = {"post_categories": post_categories, "post_categories_amount": post_categories_amount,
                  "app_categories": app_categories, "app_categories_amount": app_categories_amount,}
