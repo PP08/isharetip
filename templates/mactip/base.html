@@ -192,7 +192,7 @@
                         class="label label-rouded label-inverse pull-right">{{ app_categories_amount }}</span></span></a>
                     <ul class="nav nav-second-level">
                         {% for category in app_categories %}
-                            <li><a href="{% url 'app_category' category=app.category|genSlug %}"><i class=" fa-fw">{{ forloop.counter }}</i><span
+                            <li><a href="{% url 'app_category' category=category|genSlug %}"><i class=" fa-fw">{{ forloop.counter }}</i><span
                                     class="hide-menu">{{ category }}</span></a></li>
                         {% endfor %}
                     </ul>
