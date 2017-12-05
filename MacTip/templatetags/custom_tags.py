@@ -6,5 +6,6 @@ register = template.Library()
 def genSlug(category):
     return str(category[0]).replace(' ', '-')
 
+@register.filter()
 def genAppCateSlug(category):
     return str(category).replace(' ', '-')
