@@ -1,5 +1,6 @@
 {% extends 'mactip/base.html' %}
 {% load static %}
+{% load custom_tags %}
 {% block content %}
     <div class="infinite-container">
         <div class="row infinite-item">
@@ -21,7 +22,7 @@
                                 <h3 class="box-title m-b-0">{{ app.name | truncatechars:25 }}</h3></a>
                             <small class="text-muted db">{{ app.date_upload|date }}</small>
                             <br>
-                            <a href="{% url 'app_category' category=app.category|genSlug %}" style="margin-left: -5px;"><small class="label label-info m-l-5">{{ app.category.0 }}</small></a>
+                            <a href="{% url 'app_category' category=app.category | genSlug %}" style="margin-left: -5px;"><small class="label label-info m-l-5">{{ app.category.0 }}</small></a>
 
                         </div>
                     </div>
