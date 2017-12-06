@@ -92,3 +92,7 @@ div.panel-body img {
     margin-top: 15px;
     margin-bottom: 15px;
 }
+
+.url-to-detail:hover {
+    color: rgb(136, 255, 205);
+}
