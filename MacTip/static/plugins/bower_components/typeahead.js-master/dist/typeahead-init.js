@@ -68,7 +68,7 @@ var apps = new Bloodhound({
     queryTokenizer: Bloodhound.tokenizers.whitespace,
     identify: function(obj) { return obj.name; },
     prefetch: '/static/data/db/backup/macapps.json',
-    ttl:1
+    ttl:0
 });
 // passing in `null` for the `options` arguments will result in the default
 // options being used
