@@ -79,7 +79,7 @@ $('#prefetch .typeahead').typeahead(null,
         display: 'name',
         hint: true,
         highlight: true,
-        minLength: 1,
+        minLength: 0,
     }
 );
 
